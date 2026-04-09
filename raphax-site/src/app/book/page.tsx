@@ -42,7 +42,7 @@ export default function BookingPage() {
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative py-20 bg-mesh overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/7 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3 pointer-events-none" />
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export default function BookingPage() {
 
       {/* ── Main booking card ─────────────────────────────────── */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -169,11 +169,11 @@ export default function BookingPage() {
                   </div>
 
                   <a
-                    href="tel:+18005553273"
+                    href="tel:3147555894"
                     className="flex items-center justify-center gap-2.5 text-primary font-bold hover:underline"
                   >
                     <Phone className="w-4 h-4" />
-                    Or Call Us: +1 (800) 555-CARE
+                    Or Call Us: 314-755-5894
                   </a>
 
                   <p className="text-xs text-muted">
@@ -218,16 +218,16 @@ export default function BookingPage() {
 
       {/* ── Alternative contact ───────────────────────────────── */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <motion.div {...fadeUp()} className="text-center">
             <p className="text-muted mb-6 font-medium">Prefer to talk first?</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+18005553273"
+                href="tel:3147555894"
                 className="inline-flex items-center gap-2 px-8 py-4 border border-border rounded-full font-bold hover:bg-surface hover:border-primary/30 transition-all group"
               >
                 <Phone className="w-5 h-5 text-primary" />
-                Call +1 (800) 555-CARE
+                Call 314-755-5894
               </a>
               <Link
                 href="/contact"

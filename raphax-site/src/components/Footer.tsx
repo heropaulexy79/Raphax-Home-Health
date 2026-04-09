@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Heart, ArrowUpRight } from "lucide-react";
 
 const footerServices = [
@@ -29,28 +30,30 @@ export default function Footer() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[300px] bg-secondary/5 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="relative container mx-auto px-6 lg:px-12 xl:px-22 pt-20 pb-10">
+      <div className="relative container mx-auto px-6 lg:px-10 xl:px-16 pt-20 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-3 mb-6 group">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform">
-                R
-              </div>
-              <span className="text-xl font-bold font-goldplay tracking-tight text-white">
-                Raphax <span className="text-primary">Health</span>
-              </span>
+            <Link href="/" className="inline-flex items-center mb-6 group">
+              <Image 
+                src="/Raphax_Logo_c_black@3x.png" 
+                alt="Raphax Logo" 
+                width={200} 
+                height={60} 
+                className="h-12 w-auto object-contain brightness-0 invert" 
+                priority
+              />
             </Link>
             <p className="text-white/55 max-w-sm mb-8 leading-relaxed text-sm">
               Licensed home health agency delivering compassionate, professional care to patients in the comfort of their own homes. Serving families with dignity since 2012.
             </p>
             <div className="space-y-4 text-sm">
-              <a href="tel:+18005553273" className="flex items-center gap-3 text-white/55 hover:text-white transition-colors group">
+              <a href="tel:3147555894" className="flex items-center gap-3 text-white/55 hover:text-white transition-colors group">
                 <div className="w-9 h-9 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/25 transition-colors">
                   <Phone className="w-4 h-4 text-primary" />
                 </div>
-                <span>+1 (800) 555-CARE — Available 24/7</span>
+                <span>314-755-5894 — Available 24/7</span>
               </a>
               <a href="mailto:care@raphax.health" className="flex items-center gap-3 text-white/55 hover:text-white transition-colors group">
                 <div className="w-9 h-9 rounded-lg bg-secondary/15 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/25 transition-colors">

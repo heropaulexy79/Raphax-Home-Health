@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Stethoscope, Heart, UserCheck, Home, Brain, Pill,
   Activity, Users, ArrowRight, CheckCircle2, ChevronRight, LucideIcon
@@ -96,7 +97,7 @@ export default function ServicesPage() {
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative py-24 bg-mesh overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/7 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3 pointer-events-none" />
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -116,7 +117,7 @@ export default function ServicesPage() {
 
       {/* ── Services Grid ─────────────────────────────────────── */}
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <motion.div
             variants={staggerParent}
             initial="initial"
@@ -170,7 +171,7 @@ export default function ServicesPage() {
 
       {/* ── Insurance ─────────────────────────────────────────── */}
       <section className="py-24 bg-mesh-surface">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
             {/* Left */}
@@ -202,33 +203,41 @@ export default function ServicesPage() {
               </Link>
             </motion.div>
 
-            {/* Right — CTA card */}
+            {/* Right — Image CTA card */}
             <motion.div
               {...fadeUp(0.15)}
-              className="relative rounded-[2.5rem] overflow-hidden"
+              className="relative rounded-[2.5rem] overflow-hidden group shadow-premium"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-dark to-[#1a6eb5]" />
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/8 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-secondary/20 rounded-full blur-2xl translate-y-1/3 -translate-x-1/4" />
-              <div className="relative z-10 p-12 text-white text-center">
-                <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <Image
+                src="/raphaz.jpg"
+                alt="Professional Care"
+                width={800}
+                height={600}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              
+              <div className="relative z-10 p-10 h-full flex flex-col justify-end">
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 border border-white/30">
                   <Stethoscope className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold font-goldplay mb-5">
+                <h3 className="text-2xl font-bold font-goldplay mb-4 text-white">
                   Not sure which service you need?
                 </h3>
-                <p className="text-white/75 mb-10 leading-relaxed">
+                <p className="text-white/80 mb-8 leading-relaxed max-w-sm">
                   Our care coordinators will conduct a free in-home assessment to determine the right care plan for your loved one.
                 </p>
-                <a
-                  href="https://calendly.com/raphaxhealth"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-bold hover:scale-105 active:scale-95 transition-all shadow-lg"
-                >
-                  Book Appointment
-                  <ArrowRight className="w-5 h-5" />
-                </a>
+                <div className="flex">
+                  <a
+                    href="https://calendly.com/raphaxhealth"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary-dark transition-all shadow-lg"
+                  >
+                    Book Appointment
+                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>

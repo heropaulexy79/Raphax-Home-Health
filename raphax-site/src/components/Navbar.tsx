@@ -50,7 +50,7 @@ const navLinks = [
 ];
 
 const topBarInfo = {
-  phone: "+1 (800) 555-CARE",
+  phone: "314-755-5894",
   email: "care@raphax.health",
   address: "123 Health Street, Care City, CC 10001",
 };
@@ -87,7 +87,7 @@ export default function Navbar() {
     >
       {/* ── Top Bar ─────────────────────────────────────────────── */}
       <div className="bg-primary text-white w-full hidden md:block border-b border-primary-dark/30 h-10 overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22 flex items-center justify-between h-full text-[11px] font-semibold tracking-wider">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16 flex items-center justify-between h-full text-[11px] font-semibold tracking-wider">
           {/* Left: Info */}
           <div className="flex items-center gap-6">
             <a href={`tel:${topBarInfo.phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 hover:text-white/80 transition-all">
@@ -116,7 +116,7 @@ export default function Navbar() {
 
       {/* ── Main Navbar ─────────────────────────────────────────── */}
       <nav className="bg-white/95 backdrop-blur-md border-b border-border shadow-sm shadow-black/5">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22 flex items-center justify-between h-20">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16 flex items-center justify-between h-20">
           
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">

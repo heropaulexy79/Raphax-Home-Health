@@ -25,9 +25,9 @@ const contactItems = [
   {
     icon: Phone,
     label: "Call Us Anytime",
-    primary: "+1 (800) 555-CARE",
+    primary: "314-755-5894",
     secondary: "Available 24 hours a day, 7 days a week",
-    href: "tel:+18005553273",
+    href: "tel:3147555894",
     accent: "bg-primary/10 text-primary",
   },
   {
@@ -94,7 +94,7 @@ export default function ContactPage() {
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative py-24 bg-mesh overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/7 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3 pointer-events-none" />
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -114,7 +114,7 @@ export default function ContactPage() {
 
       {/* ── Main Content ──────────────────────────────────────── */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
             {/* ── Contact Info ──────────────────────────────────── */}
@@ -162,7 +162,7 @@ export default function ContactPage() {
                     If you need immediate home health assistance, don&apos;t wait — call our 24/7 emergency line and get connected to a care coordinator right away.
                   </p>
                   <a
-                    href="tel:+18005553273"
+                    href="tel:3147555894"
                     className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-full font-bold text-sm hover:scale-105 active:scale-95 transition-all shadow-md"
                   >
                     <Phone className="w-4 h-4" />

@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Target, Eye, Heart, Award, Users, ArrowRight,
-  ShieldCheck, CheckCircle2, Star
+  ShieldCheck, CheckCircle2, Star, Accessibility
 } from "lucide-react";
 import PageWrapper from "@/components/PageWrapper";
 
@@ -37,9 +38,10 @@ const stats = [
 ];
 
 const values = [
-  { icon: Heart,       title: "Compassion",    desc: "We hire for the heart. Every caregiver treats clients with empathy, respect, and patience." },
-  { icon: ShieldCheck, title: "Integrity", desc: "We are transparent with our families, honest in our billing, and ethical in every interaction." },
-  { icon: Star,        title: "Excellence",        desc: "We utilize the latest best practices in home health to ensure safety and superior clinical outcomes." },
+  { icon: Heart,         title: "Compassion",    desc: "We hire for the heart. Every caregiver treats clients with empathy, respect, and patience." },
+  { icon: ShieldCheck,   title: "Integrity",     desc: "We are transparent with our families, honest in our billing, and ethical in every interaction." },
+  { icon: Star,          title: "Excellence",    desc: "We utilize the latest best practices in home health to ensure safety and superior clinical outcomes." },
+  { icon: Accessibility, title: "Independence",  desc: "We focus on enabling our clients to do what they can for themselves, preserving their autonomy for as long as possible." },
 ];
 
 export default function AboutPage() {
@@ -49,7 +51,7 @@ export default function AboutPage() {
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative py-24 bg-mesh overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[500px] bg-primary/7 rounded-full blur-3xl -translate-y-1/4 translate-x-1/3 pointer-events-none" />
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,7 +71,7 @@ export default function AboutPage() {
 
       {/* ── Stats ─────────────────────────────────────────────── */}
       <section className="py-16 bg-white border-y border-border">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <motion.div
             variants={staggerParent}
             initial="initial"
@@ -95,7 +97,7 @@ export default function AboutPage() {
 
       {/* ── Who We Are ────────────────────────────────────────── */}
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
             {/* Left — Text */}
@@ -128,7 +130,7 @@ export default function AboutPage() {
               </div>
             </motion.div>
 
-            {/* Right — Visual card */}
+            {/* Right — Visual Image Card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.93 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -138,42 +140,40 @@ export default function AboutPage() {
             >
               {/* Ambient glow */}
               <div className="absolute -inset-4 bg-primary/8 rounded-[3rem] blur-3xl" />
-              <div className="relative bg-gradient-to-br from-white to-surface rounded-[2.5rem] shadow-premium border border-border overflow-hidden p-10">
-                {/* Icon cluster */}
-                <div className="flex items-center justify-center mb-10">
-                  <div className="relative w-32 h-32">
-                    <div className="absolute inset-0 bg-primary/10 rounded-full animate-pulse" />
-                    <div className="absolute inset-3 bg-primary/15 rounded-full" />
-                    <div className="absolute inset-6 bg-primary rounded-full flex items-center justify-center shadow-glow-primary">
-                      <Users className="w-12 h-12 text-white" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Pull quote */}
-                <div className="glass rounded-2xl p-6 border border-white/70 text-center">
-                  <p className="text-sm font-semibold text-foreground leading-relaxed mb-3">
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-premium border border-border">
+                <Image
+                  src="/raphax2.png"
+                  alt="Our Care Team"
+                  width={600}
+                  height={500}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                
+                {/* Pull quote overlay */}
+                <div className="absolute bottom-6 left-6 right-6 glass rounded-2xl p-6 border border-white/20">
+                  <p className="text-sm font-semibold text-white leading-relaxed mb-3">
                     "Our team of 200+ certified caregivers is ready to support your family — wherever you are in your care journey."
                   </p>
-                  <div className="inline-flex items-center gap-1.5 text-xs text-primary font-bold">
+                  <div className="inline-flex items-center gap-1.5 text-xs text-secondary-light font-bold">
                     <Heart className="w-3 h-3 fill-current" />
                     The Raphax Team
                   </div>
                 </div>
+              </div>
 
-                {/* Mini stats */}
-                <div className="grid grid-cols-3 gap-3 mt-6">
-                  {[
-                    { n: "200+", l: "Caregivers" },
-                    { n: "98%",  l: "Satisfaction" },
-                    { n: "24/7", l: "On-Call" },
-                  ].map((s) => (
-                    <div key={s.l} className="text-center p-4 bg-white rounded-2xl border border-border shadow-sm">
-                      <div className="text-xl font-bold font-goldplay text-primary">{s.n}</div>
-                      <div className="text-[10px] text-muted font-semibold mt-0.5">{s.l}</div>
-                    </div>
-                  ))}
-                </div>
+              {/* Mini stats floating */}
+              <div className="grid grid-cols-3 gap-3 mt-6">
+                {[
+                  { n: "200+", l: "Caregivers" },
+                  { n: "98%",  l: "Satisfaction" },
+                  { n: "24/7", l: "On-Call" },
+                ].map((s) => (
+                  <div key={s.l} className="text-center p-4 bg-white rounded-2xl border border-border shadow-sm">
+                    <div className="text-xl font-bold font-goldplay text-primary">{s.n}</div>
+                    <div className="text-[10px] text-muted font-semibold mt-0.5">{s.l}</div>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -182,7 +182,7 @@ export default function AboutPage() {
 
       {/* ── Mission & Vision ──────────────────────────────────── */}
       <section className="py-24 bg-mesh-surface">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <motion.div {...fadeUp()} className="text-center max-w-2xl mx-auto mb-16">
             <div className="badge mb-5">Our Purpose</div>
             <h2 className="text-4xl md:text-5xl font-bold font-goldplay mb-5">
@@ -225,13 +225,19 @@ export default function AboutPage() {
             </motion.div>
           </div>
 
-          {/* Values */}
+          {/* Values Heading */}
+          <motion.div {...fadeUp()} className="text-center max-w-2xl mx-auto mt-24 mb-16">
+            <div className="badge mb-5">Our Foundations</div>
+            <h2 className="text-4xl md:text-5xl font-bold font-goldplay">Our Values</h2>
+          </motion.div>
+
+          {/* Values Grid */}
           <motion.div
             variants={staggerParent}
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {values.map((v, i) => (
               <motion.div
@@ -250,9 +256,68 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Recognition ───────────────────────────────────────── */}
+      {/* ── Our Caregivers ────────────────────────────────────── */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Image side */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="absolute -inset-4 bg-secondary/8 rounded-[3rem] blur-3xl" />
+              <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-border shadow-premium">
+                <Image
+                  src="/raphax-treat1.jpg"
+                  alt="Raphax caregiver providing support"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              {/* Decorative element */}
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
+            </motion.div>
+
+            {/* Text side */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="badge mb-6">The Heart of Raphax</div>
+              <h2 className="text-4xl md:text-5xl font-bold font-goldplay mb-8">
+                Our <span className="text-gradient">Caregivers</span>
+              </h2>
+              <div className="space-y-6 text-lg text-muted leading-relaxed">
+                <p>
+                  Our caregivers are the heart of Raphax Home Healthcare. We don’t just look for certifications; we look for kindness. We invest in ongoing training for our staff, covering topics from dementia care to fall prevention.
+                </p>
+                <p>
+                  We treat our employees like family, which translates to stable, consistent care for you. When you work with us, you can expect the same friendly face, day after day.
+                </p>
+              </div>
+              
+              <div className="mt-10 grid grid-cols-2 gap-6">
+                <div className="p-5 bg-surface rounded-2xl border border-border">
+                  <div className="text-primary font-bold mb-1">Ongoing Training</div>
+                  <div className="text-sm">Continuous education in specialized care fields.</div>
+                </div>
+                <div className="p-5 bg-surface rounded-2xl border border-border">
+                  <div className="text-primary font-bold mb-1">Low Turnover</div>
+                  <div className="text-sm">Consistent care with familiar faces your family knows.</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <motion.div {...fadeUp()} className="text-center max-w-2xl mx-auto mb-16">
             <div className="badge mb-5">Accreditations</div>
             <h2 className="text-4xl md:text-5xl font-bold font-goldplay mb-5">
@@ -293,7 +358,7 @@ export default function AboutPage() {
 
       {/* ── CTA ───────────────────────────────────────────────── */}
       <section className="py-20 bg-mesh-surface">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22 text-center">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16 text-center">
           <motion.div {...fadeUp()}>
             <h2 className="text-3xl md:text-5xl font-bold font-goldplay mb-6">
               Ready to learn more?

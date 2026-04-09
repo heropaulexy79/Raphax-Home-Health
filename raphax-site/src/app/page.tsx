@@ -17,21 +17,21 @@ const CALENDLY_URL = "https://calendly.com/raphaxhealth";
 /* ── Slider Data ────────────────────────────────────────────── */
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80",
+    image: "/hero-slide1.jpg",
     badge: "Trusted Home Health Agency",
     headline: "Premium Care, Right at Your Front Door.",
     highlight: "Right at Your Front Door.",
     sub: "Raphax Home Health connects you with skilled nurses and compassionate caregivers who deliver hospital-quality care in the comfort of your own home.",
   },
   {
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1920&q=80",
+    image: "/hero-slide2.jpg",
     badge: "Skilled Nursing & Clinical Care",
     headline: "Expert Nurses, Compassionate Caregivers.",
     highlight: "Compassionate Caregivers.",
     sub: "Our licensed RNs and LPNs provide wound care, IV management, medication administration, and chronic disease monitoring — all in your home.",
   },
   {
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1920&q=80",
+    image: "/hero-slide3.jpg",
     badge: "Post-Hospital & Recovery Care",
     headline: "Safe Recovery, In the Comfort of Home.",
     highlight: "In the Comfort of Home.",
@@ -158,7 +158,7 @@ function HeroSlider() {
 
           {/* Content */}
           <div className="absolute inset-0 flex items-center">
-            <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+            <div className="container mx-auto px-6 lg:px-10 xl:px-16">
               <div className="max-w-2xl">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -286,7 +286,7 @@ export default function Home() {
 
       {/* ════ ABOUT SNIPPET ══════════════════════════════════════ */}
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
             {/* Left — Image */}
@@ -301,7 +301,7 @@ export default function Home() {
               <div className="absolute -inset-4 bg-primary/8 rounded-[3rem] blur-3xl" />
               <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-premium-hover border border-border">
                 <Image
-                  src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=900&q=80"
+                  src="/raphax-treat1.jpg"
                   alt="Raphax Home Health caregivers"
                   fill
                   className="object-cover object-center"
@@ -393,7 +393,7 @@ export default function Home() {
 
       {/* ════ TRUST BAR ══════════════════════════════════════════ */}
       <section className="py-5 border-y border-border bg-surface">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
             {trustBadges.map(({ label, icon: Icon }, i) => (
               <div key={label} className="flex items-center gap-2 text-sm font-semibold text-muted">
@@ -410,7 +410,7 @@ export default function Home() {
 
       {/* ════ SERVICES PREVIEW ═══════════════════════════════════ */}
       <section className="py-28 bg-mesh-surface">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 gap-6">
             <motion.div {...fadeUp()} className="max-w-xl">
               <div className="badge mb-5">Our Services</div>
@@ -464,14 +464,14 @@ export default function Home() {
 
       {/* ════ WHY RAPHAX ═════════════════════════════════════════ */}
       <section className="py-28 bg-white">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <motion.div {...fadeUp()} className="text-center max-w-2xl mx-auto mb-16">
             <div className="badge mb-5">Why Choose Us</div>
             <h2 className="text-4xl md:text-5xl font-bold font-goldplay mb-5">
               Why Families Choose Raphax
             </h2>
             <p className="text-muted text-lg leading-relaxed">
-              We don't just provide caregivers — we deliver peace of mind, dignity, and genuine compassion to every family we serve.
+              Choosing a home health care provider is one of the most important decisions a family can make. Here is why families trust us:
             </p>
           </motion.div>
 
@@ -485,21 +485,27 @@ export default function Home() {
             {[
               {
                 icon: Heart,
-                title: "Compassionate Care",
-                desc: "Our caregivers are not just trained professionals — they genuinely care about the people they serve, treating every patient like family.",
+                title: "Rigorous Hiring Process",
+                desc: "We hire for the heart. Every caregiver is background-checked, licensed, and trained to provide compassionate, professional care.",
                 featured: false,
               },
               {
                 icon: ShieldCheck,
-                title: "Vetted & Certified",
-                desc: "Every nurse and aide is background-checked, licensed, and trained to the highest clinical standards before entering your home.",
+                title: "Personalized Care Plans",
+                desc: "No two clients are the same. We create customized plans that adapt as your needs evolve.",
                 featured: true,
               },
               {
                 icon: Clock,
-                title: "Flexible Scheduling",
-                desc: "From a few hours a week to full-time live-in care — we adapt to your schedule and your needs, not the other way around.",
+                title: "24/7 Availability",
+                desc: "Health concerns don’t follow a 9-to-5 schedule. Our support team is available around the clock to answer calls and address emergencies.",
                 featured: false,
+              },
+              {
+                icon: ShieldCheck,
+                title: "Family Involvement",
+                desc: "We believe in open communication. We keep families updated on progress and involve them in every step of the care plan.",
+                featured: true,
               },
             ].map((item, i) => (
               <motion.div
@@ -530,7 +536,7 @@ export default function Home() {
 
       {/* ════ PROCESS ════════════════════════════════════════════ */}
       <section className="py-28 bg-mesh-surface">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <motion.div {...fadeUp()} className="text-center max-w-2xl mx-auto mb-16">
             <div className="badge mb-5">How It Works</div>
             <h2 className="text-4xl md:text-5xl font-bold font-goldplay mb-5">
@@ -561,7 +567,7 @@ export default function Home() {
 
       {/* ════ TESTIMONIALS ═══════════════════════════════════════ */}
       <section className="py-28 bg-white">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <motion.div {...fadeUp()} className="text-center max-w-2xl mx-auto mb-16">
             <div className="badge mb-5">Testimonials</div>
             <h2 className="text-4xl md:text-5xl font-bold font-goldplay mb-5">
@@ -609,7 +615,7 @@ export default function Home() {
 
       {/* ════ FINAL CTA ══════════════════════════════════════════ */}
       <section className="py-24 bg-mesh-surface">
-        <div className="container mx-auto px-6 lg:px-12 xl:px-22">
+        <div className="container mx-auto px-6 lg:px-10 xl:px-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -634,7 +640,7 @@ export default function Home() {
                 Your loved one deserves the very best care.
               </h2>
               <p className="text-white/75 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
-                Take the first step toward quality home health care. Book an appointment with our care team today — we'll guide you through every step.
+                We offer free, no-obligation in-home assessments. Let’s discuss how we can help your family navigate this journey.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -647,11 +653,11 @@ export default function Home() {
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a
-                  href="tel:+18005553273"
+                  href="tel:3147555894"
                   className="inline-flex items-center justify-center gap-3 border border-white/30 text-white px-10 py-5 rounded-full font-bold hover:bg-white/10 transition-all"
                 >
                   <Phone className="w-5 h-5" />
-                  Call +1 (800) 555-CARE
+                  Call 314-755-5894
                 </a>
               </div>
             </div>
