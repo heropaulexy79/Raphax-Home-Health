@@ -41,12 +41,18 @@ const Instagram = ({ className }: { className?: string }) => (
 const CALENDLY_URL = "https://calendly.com/raphaxhealth";
 
 
-const navLinks = [
+interface NavLink {
+  name: string;
+  href: string;
+  hasDropdown?: boolean;
+}
+
+const navLinks: NavLink[] = [
   { name: "Home",     href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "Services", href: "/services", hasDropdown: true },
-  { name: "Blog",     href: "#" },
-  { name: "Contacts", href: "/contact" },
+  { name: "Services", href: "/services" },
+  { name: "Careers",  href: "/careers" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const topBarInfo = {
