@@ -56,9 +56,9 @@ const navLinks: NavLink[] = [
 ];
 
 const topBarInfo = {
-  phone: "314-755-5894",
+  phone: "(557) 218-0183",
   email: "care@raphax.health",
-  address: "123 Health Street, Care City, CC 10001",
+  address: "3431 Bridgeland Drive Bridgeton MO 63044 Suite B.",
 };
 
 const socials = [
