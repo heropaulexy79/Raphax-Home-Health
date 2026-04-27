@@ -38,7 +38,8 @@ const Instagram = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const BOOKING_URL = "/book";
+import { BOOKING_URL } from "@/constants/links";
+
 
 
 interface NavLink {

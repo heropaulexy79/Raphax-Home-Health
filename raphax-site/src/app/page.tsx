@@ -12,7 +12,8 @@ import {
 import PageWrapper from "@/components/PageWrapper";
 
 // ── Update with your actual Calendly link ───────────────────
-const BOOKING_URL = "/book";
+import { BOOKING_URL } from "@/constants/links";
+
 
 /* ── Slider Data ────────────────────────────────────────────── */
 const slides = [

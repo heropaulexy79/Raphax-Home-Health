@@ -8,6 +8,8 @@ import {
   Activity, Users, ArrowRight, CheckCircle2, ChevronRight, LucideIcon
 } from "lucide-react";
 import PageWrapper from "@/components/PageWrapper";
+import { BOOKING_URL } from "@/constants/links";
+
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -151,7 +153,8 @@ export default function ServicesPage() {
 
                 <div className="pt-6 border-t border-border flex items-center justify-between">
                   <a
-                    href="/book"
+                    href={BOOKING_URL}
+
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-primary font-bold text-sm group/link hover:gap-3 transition-all"
@@ -229,7 +232,8 @@ export default function ServicesPage() {
                 </p>
                 <div className="flex">
                   <a
-                    href="/book"
+                    href={BOOKING_URL}
+
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary-dark transition-all shadow-lg"

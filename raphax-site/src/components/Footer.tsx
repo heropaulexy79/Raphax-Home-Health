@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Heart, ArrowUpRight } from "lucide-react";
+import { BOOKING_URL } from "@/constants/links";
+
 
 const footerServices = [
   "Skilled Nursing Care",
@@ -16,7 +18,8 @@ const footerLinks = [
   { name: "Our Services", href: "/services" },
   { name: "Careers", href: "/careers" },
   { name: "Contact Us", href: "/contact" },
-  { name: "Book Appointment", href: "/book" },
+  { name: "Book Appointment", href: BOOKING_URL },
+
 ];
 
 export default function Footer() {
@@ -121,7 +124,8 @@ export default function Footer() {
               <p className="text-white/50 text-sm mt-1">Book your free, no-obligation care assessment today.</p>
             </div>
             <a
-              href="/book"
+              href={BOOKING_URL}
+
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary text-white px-8 py-3 rounded-full font-bold hover:bg-primary-dark transition-all flex-shrink-0 text-sm flex items-center gap-2 group shadow-md"

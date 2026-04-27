@@ -6,6 +6,8 @@ import { Calendar, Clock, Phone, CheckCircle2, ArrowRight, Heart, Video } from "
 import Link from "next/link";
 import PageWrapper from "@/components/PageWrapper";
 
+import { BOOKING_URL } from "@/constants/links";
+
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
@@ -38,6 +40,9 @@ const faqItems = [
 
 export default function BookingPage() {
   useEffect(() => {
+    window.location.href = BOOKING_URL;
+    return; // Stop further execution
+    
     (function (C, A, L) {
       let p = function (a: any, ar: any) {
         a.q.push(ar);
