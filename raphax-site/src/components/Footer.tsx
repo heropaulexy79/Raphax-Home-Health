@@ -16,7 +16,7 @@ const footerLinks = [
   { name: "Our Services", href: "/services" },
   { name: "Careers", href: "/careers" },
   { name: "Contact Us", href: "/contact" },
-  { name: "Book Appointment", href: "https://calendly.com/raphaxhealth" },
+  { name: "Book Appointment", href: "/book" },
 ];
 
 export default function Footer() {
@@ -121,7 +121,7 @@ export default function Footer() {
               <p className="text-white/50 text-sm mt-1">Book your free, no-obligation care assessment today.</p>
             </div>
             <a
-              href="https://calendly.com/raphaxhealth"
+              href="/book"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary text-white px-8 py-3 rounded-full font-bold hover:bg-primary-dark transition-all flex-shrink-0 text-sm flex items-center gap-2 group shadow-md"

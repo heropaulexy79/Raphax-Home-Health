@@ -38,7 +38,7 @@ const Instagram = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const CALENDLY_URL = "https://calendly.com/raphaxhealth";
+const BOOKING_URL = "/book";
 
 
 interface NavLink {
@@ -158,7 +158,7 @@ export default function Navbar() {
           {/* Right: CTA Button */}
           <div className="hidden md:flex items-center">
             <a
-              href={CALENDLY_URL}
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary text-white px-8 py-3 rounded-full text-[13px] font-bold hover:bg-primary-dark transition-all shadow-md flex items-center gap-2 group tracking-tight"
@@ -218,7 +218,7 @@ export default function Navbar() {
                     ))}
                   </div>
                   <a
-                    href={CALENDLY_URL}
+                    href={BOOKING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full bg-primary text-white py-4 rounded-xl text-center font-bold flex items-center justify-center gap-2 mt-2"

@@ -12,7 +12,7 @@ import {
 import PageWrapper from "@/components/PageWrapper";
 
 // ── Update with your actual Calendly link ───────────────────
-const CALENDLY_URL = "https://calendly.com/raphaxhealth";
+const BOOKING_URL = "/book";
 
 /* ── Slider Data ────────────────────────────────────────────── */
 const slides = [
@@ -196,7 +196,7 @@ function HeroSlider() {
                   className="flex flex-col sm:flex-row gap-4"
                 >
                   <a
-                    href={CALENDLY_URL}
+                    href={BOOKING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold shadow-premium hover:bg-primary-dark hover:shadow-premium-hover transition-all group"
@@ -644,7 +644,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href={CALENDLY_URL}
+                  href={BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 bg-white text-primary px-10 py-5 rounded-full font-bold shadow-xl hover:scale-105 active:scale-95 transition-all"

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Clock, Phone, CheckCircle2, ArrowRight, Heart, Video } from "lucide-react";
 import Link from "next/link";
@@ -36,6 +37,50 @@ const faqItems = [
 ];
 
 export default function BookingPage() {
+  useEffect(() => {
+    (function (C, A, L) {
+      let p = function (a: any, ar: any) {
+        a.q.push(ar);
+      };
+      let d = C.document;
+      C.Cal =
+        C.Cal ||
+        function () {
+          let cal = C.Cal;
+          let ar = arguments;
+          if (!cal.loaded) {
+            cal.q = cal.q || [];
+            cal.t = Date.now();
+            cal.loaded = true;
+            let s = d.createElement("script");
+            s.src = "https://embed.cal.com/embed/embed.js";
+            d.head.appendChild(s);
+          }
+          p(cal, ar);
+        };
+    })(window as any, "https://app.cal.com/embed/embed.js", "Cal");
+
+    if (window.Cal) {
+      window.Cal("init", { origin: "https://cal.com" });
+
+      window.Cal("inline", {
+        elementOrSelector: "#my-cal-inline",
+        calLink: "oke-oluwaseun-89brfh/30min",
+        layout: "month_view",
+        config: {
+          theme: "light",
+        },
+      });
+
+      window.Cal("ui", {
+        theme: "light",
+        styles: { branding: { brandColor: "#4A90E2" } },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    }
+  }, []);
+
   return (
     <PageWrapper>
 
@@ -133,53 +178,9 @@ export default function BookingPage() {
                 </div>
               </div>
 
-              {/* ── Calendly / Main Panel ───────────────────────── */}
-              <div className="lg:col-span-3 flex items-center justify-center bg-white p-10 md:p-16 min-h-[600px]">
-                <div className="w-full max-w-md text-center">
-                  {/* Calendar icon with glow */}
-                  <div className="relative w-24 h-24 mx-auto mb-8">
-                    <div className="absolute inset-0 bg-primary/15 rounded-full blur-xl" />
-                    <div className="relative w-24 h-24 bg-gradient-to-br from-primary to-primary-dark rounded-3xl flex items-center justify-center shadow-glow-primary">
-                      <Calendar className="w-12 h-12 text-white" />
-                    </div>
-                  </div>
-
-                  <h4 className="text-2xl font-bold font-goldplay mb-4">
-                    Select Your Appointment Time
-                  </h4>
-                  <p className="text-muted mb-8 leading-relaxed text-sm">
-                    Pick a date and time that works for you. We&apos;ll confirm your appointment and send a reminder before your call.
-                  </p>
-
-                  <div className="bg-surface rounded-3xl p-10 border border-border shadow-sm mb-8">
-                    <p className="text-sm font-semibold text-muted mb-6">
-                      We use Calendly to manage our care assessment bookings.
-                    </p>
-                    
-                    <a
-                      href="https://calendly.com/raphaxhealth"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full bg-primary text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-primary-dark hover:scale-[1.02] transition-all shadow-glow-primary group"
-                    >
-                      <Calendar className="w-5 h-5" />
-                      Open Calendly Scheduler
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  </div>
-
-                  <a
-                    href="tel:3147555894"
-                    className="flex items-center justify-center gap-2.5 text-primary font-bold hover:underline"
-                  >
-                    <Phone className="w-4 h-4" />
-                    Or Call Us: 314-755-5894
-                  </a>
-
-                  <p className="text-xs text-muted">
-                    Available Monday–Friday 8AM–6PM · On-call support 24/7
-                  </p>
-                </div>
+              {/* ── Cal.com Inline Panel ────────────────────────── */}
+              <div className="lg:col-span-3 bg-white min-h-[600px] relative">
+                <div id="my-cal-inline" className="w-full h-full min-h-[700px]" />
               </div>
             </div>
           </motion.div>
@@ -242,4 +243,11 @@ export default function BookingPage() {
       </section>
     </PageWrapper>
   );
+}
+
+// Add types for Cal
+declare global {
+  interface Window {
+    Cal: any;
+  }
 }

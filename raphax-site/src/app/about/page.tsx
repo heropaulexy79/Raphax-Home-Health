@@ -368,7 +368,7 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://calendly.com/raphaxhealth"
+                href="/book"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary text-white px-10 py-4 rounded-full font-bold shadow-premium hover:bg-primary-dark hover:shadow-premium-hover transition-all flex items-center gap-2 justify-center group"
