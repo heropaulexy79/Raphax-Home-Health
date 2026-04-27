@@ -492,6 +492,12 @@ export default function Home() {
               },
               {
                 icon: ShieldCheck,
+                title: "Family Involvement",
+                desc: "We believe in open communication. We keep families updated on progress and involve them in every step of the care plan.",
+                featured: true,
+              },
+              {
+                icon: ShieldCheck,
                 title: "Personalized Care Plans",
                 desc: "No two clients are the same. We create customized plans that adapt as your needs evolve.",
                 featured: true,
@@ -502,12 +508,6 @@ export default function Home() {
                 desc: "Health concerns don’t follow a 9-to-5 schedule. Our support team is available around the clock to answer calls and address emergencies.",
                 featured: false,
               },
-              {
-                icon: ShieldCheck,
-                title: "Family Involvement",
-                desc: "We believe in open communication. We keep families updated on progress and involve them in every step of the care plan.",
-                featured: true,
-              },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -516,7 +516,7 @@ export default function Home() {
                   item.featured
                     ? "bg-gradient-to-br from-primary to-primary-dark text-white border-transparent shadow-premium-hover"
                     : "bg-white border-border hover:border-primary/25 hover:shadow-premium"
-                }`}
+                } ${i === 3 ? "md:col-start-2" : ""}`}
               >
                 <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 ${
                   item.featured ? "bg-white/15 text-white" : "bg-primary/10 text-primary"
