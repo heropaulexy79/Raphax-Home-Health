@@ -14,25 +14,25 @@ const fadeUp = (delay = 0) => ({
 });
 
 const benefits = [
-  "Free, no-obligation assessment",
-  "Personalized care plan discussion",
-  "Insurance & coverage verification",
-  "Meet your care coordinator",
-  "Questions answered by a registered nurse",
+  "Expert professional consultation",
+  "Comprehensive needs assessment",
+  "Personalized strategy discussion",
+  "Direct access to specialists",
+  "Actionable next steps and guidance",
 ];
 
 const faqItems = [
   {
-    q: "How long does the assessment take?",
-    a: "The assessment is a 30–45 minute call or video consultation with one of our senior care coordinators.",
+    q: "How do I confirm my appointment?",
+    a: "Your appointment is confirmed immediately once the secure payment is processed through the scheduler.",
   },
   {
-    q: "Is there any cost or commitment?",
-    a: "Absolutely none. The assessment is completely free with no obligation to proceed.",
+    q: "What is your cancellation policy?",
+    a: "You can reschedule or cancel your appointment up to 24 hours before the scheduled time via the link in your confirmation email.",
   },
   {
-    q: "What should I prepare before the call?",
-    a: "Have your insurance information handy if possible. Otherwise, just be ready to discuss your loved one's care needs in general terms.",
+    q: "Can I book a recurring session?",
+    a: "Yes, you can discuss recurring consultations during our initial meeting, and we can set up a schedule that works for you.",
   },
 ];
 
@@ -96,15 +96,13 @@ export default function BookingPage() {
           >
             <div className="badge-green mb-6">
               <Heart className="w-3 h-3 fill-current" />
-              Free Assessment — No Obligation
+              Book Appointments
             </div>
             <h1 className="text-5xl md:text-7xl font-bold font-goldplay mb-7 leading-[1.05]">
-              Book Your{" "}
-              <span className="text-gradient">Free Care</span>{" "}
-              Assessment
+              Book Your <span className="text-gradient">Appointment</span>
             </h1>
             <p className="text-xl text-muted leading-relaxed">
-              Speak with a Raphax care coordinator, discuss your loved one&apos;s needs, and receive a personalized care plan — completely free.
+              Schedule a professional consultation with Raphax. Secure your time slot below.
             </p>
           </motion.div>
         </div>
@@ -126,9 +124,9 @@ export default function BookingPage() {
                 <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-7">
                   <Calendar className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold font-goldplay mb-2">Free Care Assessment</h3>
+                <h3 className="text-2xl font-bold font-goldplay mb-2">Book Appointment</h3>
                 <p className="text-muted mb-8 leading-relaxed text-sm">
-                  A dedicated 30–45 minute consultation with one of our senior care coordinators.
+                  A dedicated consultation session to discuss your requirements.
                 </p>
 
                 {/* Meeting details */}
@@ -172,9 +170,9 @@ export default function BookingPage() {
                 <div className="p-5 bg-white rounded-2xl border border-border shadow-sm">
                   <div className="text-3xl text-primary/20 font-goldplay leading-none mb-2 select-none">"</div>
                   <p className="text-sm text-muted italic leading-relaxed">
-                    The assessment call was so helpful. They listened to all our concerns and had a care plan ready within 24 hours.
+                    Booking was so easy. I was able to pick a time that worked for me and get my questions answered immediately.
                   </p>
-                  <p className="text-xs font-bold mt-3 text-foreground">— Sandra T., Family Member</p>
+                  <p className="text-xs font-bold mt-3 text-foreground">— James R., Professional Partner</p>
                 </div>
               </div>
 
