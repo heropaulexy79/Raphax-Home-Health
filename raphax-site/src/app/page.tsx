@@ -492,12 +492,6 @@ export default function Home() {
               },
               {
                 icon: ShieldCheck,
-                title: "Family Involvement",
-                desc: "We believe in open communication. We keep families updated on progress and involve them in every step of the care plan.",
-                featured: true,
-              },
-              {
-                icon: ShieldCheck,
                 title: "Personalized Care Plans",
                 desc: "No two clients are the same. We create customized plans that adapt as your needs evolve.",
                 featured: true,
@@ -507,6 +501,12 @@ export default function Home() {
                 title: "24/7 Availability",
                 desc: "Health concerns don’t follow a 9-to-5 schedule. Our support team is available around the clock to answer calls and address emergencies.",
                 featured: false,
+              },
+              {
+                icon: ShieldCheck,
+                title: "Family Involvement",
+                desc: "We believe in open communication. We keep families updated on progress and involve them in every step of the care plan.",
+                featured: true,
               },
             ].map((item, i) => (
               <motion.div
