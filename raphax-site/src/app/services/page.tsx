@@ -8,7 +8,7 @@ import {
   Activity, Users, ArrowRight, CheckCircle2, ChevronRight, LucideIcon
 } from "lucide-react";
 import PageWrapper from "@/components/PageWrapper";
-import { BOOKING_URL } from "@/constants/links";
+import { BOOKING_URL, CAL_LINK_ID } from "@/constants/links";
 
 
 const fadeUp = (delay = 0) => ({
@@ -152,16 +152,14 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="pt-6 border-t border-border flex items-center justify-between">
-                  <a
-                    href={BOOKING_URL}
-
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-primary font-bold text-sm group/link hover:gap-3 transition-all"
+                  <button
+                    data-cal-link={CAL_LINK_ID}
+                    data-cal-config='{"layout":"month_view"}'
+                    className="inline-flex items-center gap-2 text-primary font-bold text-sm group/link hover:gap-3 transition-all cursor-pointer"
                   >
                     Book Appointment
                     <ChevronRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                  </a>
+                  </button>
                   <span className="text-xs text-muted font-medium bg-surface px-3 py-1.5 rounded-full border border-border">
                     Service #{String(i + 1).padStart(2, "0")}
                   </span>
@@ -231,16 +229,14 @@ export default function ServicesPage() {
                   Our care coordinators will conduct a free in-home assessment to determine the right care plan for your loved one.
                 </p>
                 <div className="flex">
-                  <a
-                    href={BOOKING_URL}
-
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary-dark transition-all shadow-lg"
+                  <button
+                    data-cal-link={CAL_LINK_ID}
+                    data-cal-config='{"layout":"month_view"}'
+                    className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary-dark transition-all shadow-lg cursor-pointer"
                   >
                     Book Appointment
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                  </a>
+                  </button>
                 </div>
               </div>
             </motion.div>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Heart, ArrowUpRight } from "lucide-react";
-import { BOOKING_URL } from "@/constants/links";
+import { BOOKING_URL, CAL_LINK_ID } from "@/constants/links";
 
 
 const footerServices = [
@@ -18,7 +18,7 @@ const footerLinks = [
   { name: "Our Services", href: "/services" },
   { name: "Careers", href: "/careers" },
   { name: "Contact Us", href: "/contact" },
-  { name: "Book Appointment", href: BOOKING_URL },
+  { name: "Book Appointment", href: "#", isBooking: true },
 
 ];
 
@@ -81,14 +81,25 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {footerLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white/50 hover:text-white text-sm font-medium transition-colors flex items-center gap-1.5 group"
-                  >
-                    {link.name}
-                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
-                  </Link>
+                <li key={link.name}>
+                  {link.isBooking ? (
+                    <button
+                      data-cal-link={CAL_LINK_ID}
+                      data-cal-config='{"layout":"month_view"}'
+                      className="text-white/50 hover:text-white text-sm font-medium transition-colors flex items-center gap-1.5 group cursor-pointer"
+                    >
+                      {link.name}
+                      <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-white/50 hover:text-white text-sm font-medium transition-colors flex items-center gap-1.5 group"
+                    >
+                      {link.name}
+                      <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -123,16 +134,14 @@ export default function Footer() {
               <p className="text-white font-bold text-lg font-goldplay">Ready to get started?</p>
               <p className="text-white/50 text-sm mt-1">Book your free, no-obligation care assessment today.</p>
             </div>
-            <a
-              href={BOOKING_URL}
-
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary text-white px-8 py-3 rounded-full font-bold hover:bg-primary-dark transition-all flex-shrink-0 text-sm flex items-center gap-2 group shadow-md"
+            <button
+              data-cal-link={CAL_LINK_ID}
+              data-cal-config='{"layout":"month_view"}'
+              className="bg-primary text-white px-8 py-3 rounded-full font-bold hover:bg-primary-dark transition-all flex-shrink-0 text-sm flex items-center gap-2 group shadow-md cursor-pointer"
             >
               Book Appointment
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </a>
+            </button>
           </div>
         </div>
 

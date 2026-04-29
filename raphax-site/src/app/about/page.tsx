@@ -8,7 +8,7 @@ import {
   ShieldCheck, CheckCircle2, Star, Accessibility
 } from "lucide-react";
 import PageWrapper from "@/components/PageWrapper";
-import { BOOKING_URL } from "@/constants/links";
+import { BOOKING_URL, CAL_LINK_ID } from "@/constants/links";
 
 
 const fadeUp = (delay = 0) => ({
@@ -369,16 +369,14 @@ export default function AboutPage() {
               Speak with our care coordinators today and discover how Raphax can support your family.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={BOOKING_URL}
-
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-primary text-white px-10 py-4 rounded-full font-bold shadow-premium hover:bg-primary-dark hover:shadow-premium-hover transition-all flex items-center gap-2 justify-center group"
+              <button
+                data-cal-link={CAL_LINK_ID}
+                data-cal-config='{"layout":"month_view"}'
+                className="bg-primary text-white px-10 py-4 rounded-full font-bold shadow-premium hover:bg-primary-dark hover:shadow-premium-hover transition-all flex items-center gap-2 justify-center group cursor-pointer"
               >
                 Book Appointment
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </button>
               <Link
                 href="/contact"
                 className="px-10 py-4 rounded-full font-bold border border-border hover:bg-white hover:border-primary/30 hover:shadow-md transition-all text-center"

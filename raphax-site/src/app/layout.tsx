@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CalProvider from "@/components/CalProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -51,6 +52,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${goldplay.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
+        <CalProvider />
         <Navbar />
         {children}
         <Footer />

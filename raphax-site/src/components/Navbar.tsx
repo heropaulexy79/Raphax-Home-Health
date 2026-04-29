@@ -38,7 +38,7 @@ const Instagram = ({ className }: { className?: string }) => (
   </svg>
 );
 
-import { BOOKING_URL } from "@/constants/links";
+import { BOOKING_URL, CAL_LINK_ID } from "@/constants/links";
 
 
 
@@ -158,14 +158,13 @@ export default function Navbar() {
 
           {/* Right: CTA Button */}
           <div className="hidden md:flex items-center">
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary text-white px-8 py-3 rounded-full text-[13px] font-bold hover:bg-primary-dark transition-all shadow-md flex items-center gap-2 group tracking-tight"
+            <button
+              data-cal-link={CAL_LINK_ID}
+              data-cal-config='{"layout":"month_view"}'
+              className="bg-primary text-white px-8 py-3 rounded-full text-[13px] font-bold hover:bg-primary-dark transition-all shadow-md flex items-center gap-2 group tracking-tight cursor-pointer"
             >
               Book Appointment
-            </a>
+            </button>
           </div>
 
           {/* Mobile Toggle */}
@@ -218,14 +217,13 @@ export default function Navbar() {
                       </a>
                     ))}
                   </div>
-                  <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-primary text-white py-4 rounded-xl text-center font-bold flex items-center justify-center gap-2 mt-2"
+                  <button
+                    data-cal-link={CAL_LINK_ID}
+                    data-cal-config='{"layout":"month_view"}'
+                    className="w-full bg-primary text-white py-4 rounded-xl text-center font-bold flex items-center justify-center gap-2 mt-2 cursor-pointer"
                   >
                     Book Appointment
-                  </a>
+                  </button>
                 </div>
               </div>
             </motion.div>
