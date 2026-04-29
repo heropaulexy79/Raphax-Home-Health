@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Clock, Phone, CheckCircle2, ArrowRight, Heart, Video } from "lucide-react";
 import Link from "next/link";
+import Cal from "@calcom/embed-react";
 import PageWrapper from "@/components/PageWrapper";
 
 import { BOOKING_URL } from "@/constants/links";
@@ -40,50 +41,7 @@ const faqItems = [
 
 export default function BookingPage() {
   useEffect(() => {
-    window.location.href = BOOKING_URL;
-    return; // Stop further execution
-    
-    (function (C, A, L) {
-      let p = function (a: any, ar: any) {
-        a.q.push(ar);
-      };
-      let d = C.document;
-      C.Cal =
-        C.Cal ||
-        function () {
-          let cal = C.Cal;
-          let ar = arguments;
-          if (!cal.loaded) {
-            cal.q = cal.q || [];
-            cal.t = Date.now();
-            cal.loaded = true;
-            let s = d.createElement("script");
-            s.src = "https://embed.cal.com/embed/embed.js";
-            d.head.appendChild(s);
-          }
-          p(cal, ar);
-        };
-    })(window as any, "https://app.cal.com/embed/embed.js", "Cal");
-
-    if (window.Cal) {
-      window.Cal("init", { origin: "https://cal.com" });
-
-      window.Cal("inline", {
-        elementOrSelector: "#my-cal-inline",
-        calLink: "oke-oluwaseun-89brfh/30min",
-        layout: "month_view",
-        config: {
-          theme: "light",
-        },
-      });
-
-      window.Cal("ui", {
-        theme: "light",
-        styles: { branding: { brandColor: "#4A90E2" } },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
-    }
+    // window.location.href = BOOKING_URL; // Redirect disabled so inline calendar can show
   }, []);
 
   return (
@@ -183,7 +141,11 @@ export default function BookingPage() {
 
               {/* ── Cal.com Inline Panel ────────────────────────── */}
               <div className="lg:col-span-3 bg-white min-h-[600px] relative">
-                <div id="my-cal-inline" className="w-full h-full min-h-[700px]" />
+                <Cal
+                  calLink="oke-oluwaseun-89brfh/30min"
+                  style={{ width: "100%", height: "100%", minHeight: "700px" }}
+                  config={{ layout: "month_view" }}
+                />
               </div>
             </div>
           </motion.div>
@@ -248,9 +210,3 @@ export default function BookingPage() {
   );
 }
 
-// Add types for Cal
-declare global {
-  interface Window {
-    Cal: any;
-  }
-}
